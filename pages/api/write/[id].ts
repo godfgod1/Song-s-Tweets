@@ -29,7 +29,11 @@ import { withApiSession } from '../../../lib/server/withSession';
     }
   })
   if(targetWrite){
-    isLike = true
+    for(let i  of  targetWrite.Like){
+      if(i.userId === user.id){
+        isLike = true
+      } 
+    }
   }
   return res.json({
     ok:true, tweetData:targetWrite, isLike
