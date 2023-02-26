@@ -30,13 +30,16 @@ export default () => {
 
   return(
     <div className=' h-screen  flex items-center  justify-center'>
-      <form onSubmit={handleSubmit(onValid)} className='h-[28rem]  border border-gray-300 p-10 flex flex-col   justify-between '>
-      <Input name={"email"} register={register("email", {required:true})} type="email"/>
-      <Input name={"name"} register={register("name", {required:true})} type="password"/>
-      <Input name={"password"} register={register("password", {required:true})} type="password"/>
-      <Input name={"password for double-check"} register={register("repassword", {required:true})} type="password"/>
-      <Button text={"회원가입"} />
-      </form>
+      <div className='h-[32rem] flex flex-col justify-between'>
+        <form onSubmit={handleSubmit(onValid)} className='h-[28rem]  border border-gray-300 p-10 flex flex-col   justify-between '>
+        <Input name={"email"} register={register("email", {required:true})} type="email"/>
+        <Input name={"name"} register={register("name", {required:true})} type="text"/>
+        <Input name={"password"} register={register("password", {required:true})} type="password"/>
+        <Input name={"password for double-check"} register={register("repassword", {required:true})} type="password"/>
+        <Button text={"회원가입"} />
+        </form>
+      <Button text={"로그인 페이지로"} onClick={()=>router.push("/log-in")}/>
+      </div>
     </div>
   )
 };

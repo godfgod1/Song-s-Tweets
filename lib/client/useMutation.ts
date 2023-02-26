@@ -20,7 +20,7 @@ export default function useMutation<T = any>(url: string): UseMutationResult<T> 
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body:  JSON.stringify(data),
     })
       .then((response) => response.json().catch(() => {}))
       .then((data) => setSate((prev) => ({ ...prev, data })))

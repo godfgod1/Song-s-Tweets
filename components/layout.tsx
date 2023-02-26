@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect } from "react";
+import useUser from '../lib/client/useUser';
 
 interface LayoutProps {
   children: React.ReactNode
@@ -7,11 +8,11 @@ interface LayoutProps {
 
 export default ({ children }: LayoutProps) => {
   const router = useRouter()
-  const {pathname,route} =router
+  const {pathname} =router
+  //  useUser();
   useEffect(() => {
 
   }, [router])
-  console.log('router',router)
   return (
     <div className=' w-full max-w-xl mx-auto '>
       {pathname ==='/'  || pathname.includes('write') ?
